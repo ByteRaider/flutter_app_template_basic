@@ -2,20 +2,32 @@ import 'package:flutter/material.dart';
 
 class ScrollScreen extends StatelessWidget {
   const ScrollScreen({super.key});
+  final boxDecoration = const BoxDecoration(
+      gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          stops: [
+        0.5,
+        0.5
+      ],
+          colors: [
+        Color(0xff5ee8c5),
+        Color(0xff30BAD6),
+      ]));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: PageView(
-      physics: const BouncingScrollPhysics(),
-      scrollDirection: Axis.vertical,
-      children: const [
-        Page1(),
-        Page1(),
-        Page1(),
-        Page1(),
-        Page1(),
-      ],
+        body: Container(
+      decoration: boxDecoration,
+      child: PageView(
+        physics: const BouncingScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        children: const [
+          Page1(),
+          Page2(),
+        ],
+      ),
     ));
   }
 }
@@ -40,7 +52,6 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.red,
         alignment: Alignment.topCenter,
         child: const Image(image: AssetImage('assets/background.jpg')));
   }
@@ -65,6 +76,26 @@ class MainContent extends StatelessWidget {
             const Icon(Icons.keyboard_arrow_down,
                 size: 100, color: Colors.white)
           ]),
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+  const Page2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.blue,
+      child: Center(
+          child: TextButton(
+        onPressed: () {},
+        style: TextButton.styleFrom(backgroundColor: Colors.indigo),
+        child: const Text('Welcome to page 2',
+            style: TextStyle(
+              color: Colors.white,
+            )),
+      )),
     );
   }
 }
