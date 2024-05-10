@@ -5,11 +5,32 @@ class ScrollScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: Stack(children: [
+    return Scaffold(
+        body: PageView(
+      physics: const BouncingScrollPhysics(),
+      scrollDirection: Axis.vertical,
+      children: const [
+        Page1(),
+        Page1(),
+        Page1(),
+        Page1(),
+        Page1(),
+      ],
+    ));
+  }
+}
+
+class Page1 extends StatelessWidget {
+  const Page1({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Stack(children: [
       Background(),
       MainContent(),
-    ]));
+    ]);
   }
 }
 
@@ -30,19 +51,19 @@ class MainContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       bottom: false,
       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 20),
-            Text('11°',
+            const SizedBox(height: 20),
+            const Text('11°',
                 style: TextStyle(fontSize: 70, fontWeight: FontWeight.w600)),
-            Text('Miércoles', style: TextStyle(fontSize: 40)),
-            Expanded(
-                child: Icon(Icons.keyboard_arrow_down,
-                    size: 100, color: Colors.white))
+            const Text('Miércoles', style: TextStyle(fontSize: 40)),
+            Expanded(child: Container()),
+            const Icon(Icons.keyboard_arrow_down,
+                size: 100, color: Colors.white)
           ]),
     );
   }
