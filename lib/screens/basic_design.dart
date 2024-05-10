@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class BasicDesignScreen extends StatelessWidget {
   const BasicDesignScreen({super.key});
