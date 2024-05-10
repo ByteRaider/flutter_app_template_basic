@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class BasicDesignScreen extends StatelessWidget {
   const BasicDesignScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         children: [
-          Image(image: AssetImage('assets/landscape.jpg')),
-          Title(),
+          const Image(image: AssetImage('assets/landscape.jpg')),
+          const Title(),
+          const BottomSection(),
+          Container(
+            padding: const EdgeInsets.all(16),
+            child: const Text(
+                "Cibolac d'étole de ciboire de viande à chien de colon de sacristi de p'tit Jésus de bout d'crisse d'enfant d'chienne de Jésus de plâtre."),
+          )
         ],
       ),
     );
@@ -41,6 +48,49 @@ class Title extends StatelessWidget {
           Text('41'),
         ],
       ),
+    );
+  }
+}
+
+class BottomSection extends StatelessWidget {
+  const BottomSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
+      child: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            CustomButton(icon: Icons.call, text: 'Call'),
+            CustomButton(icon: Icons.near_me, text: 'Route'),
+            CustomButton(icon: Icons.share, text: 'Share'),
+          ]),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final IconData icon;
+  final String text;
+
+  const CustomButton({
+    super.key,
+    required this.icon,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Icon(icon, color: Colors.blue),
+        const SizedBox(height: 8),
+        Text(text, style: const TextStyle(color: Colors.blue)),
+      ],
     );
   }
 }
