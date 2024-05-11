@@ -12,13 +12,13 @@ class BackgroundX extends StatelessWidget {
         Colors.yellow,
         Colors.red,
       ],
-      begin: Alignment.topCenter,
-      end: Alignment.bottomCenter,
+      // begin: Alignment.topCenter,
+      // end: Alignment.bottomCenter,
       //stops: [0.3, 0.3, 0.31],
     ));
     return Stack(children: [
       Container(decoration: boxDecoration),
-      const Positioned(top: -100, left: -100, child: _PinkBox()),
+      const Positioned(top: -20, left: -45, child: _PinkBox()),
     ]);
   }
 }
@@ -31,8 +31,8 @@ class _PinkBox extends StatelessWidget {
     return Transform.rotate(
       angle: -0.5,
       child: Container(
-        width: 100,
-        height: 100,
+        width: 250,
+        height: 250,
         decoration: BoxDecoration(
             color: Colors.pink,
             borderRadius: BorderRadius.circular(10),
