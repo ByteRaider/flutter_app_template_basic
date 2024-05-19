@@ -1,16 +1,66 @@
-# basic_flutter_template
+# Basic Flutter Template
 
-A new Flutter project.
+A simple and customizable Flutter template to kickstart your mobile app development. This template includes the basic structure and essential configurations to help you get started quickly.
+
+## Features
+
+- Clean and structured codebase
+- Pre-configured routing and navigation
+- Basic state management using Provider
+- Customizable themes and styles
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK: [Install Flutter](https://flutter.dev/docs/get-started/install)
+- Dart SDK: Included with Flutter installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/basic_flutter_template.git
+    cd basic_flutter_template
+    ```
+
+2. Get the required dependencies:
+    ```bash
+    flutter pub get
+    ```
+
+3. Run the app:
+    ```bash
+    flutter run
+    ```
+### Configuration
+
+#### Update the Package Name
+
+1. Update the package name in `android/app/build.gradle`:
+    ```gradle
+    applicationId "com.yourcompany.basic_flutter_template"
+    ```
+
+2. Update the package name in `ios/Runner/Info.plist`:
+    ```xml
+    <key>CFBundleIdentifier</key>
+    <string>com.yourcompany.basic_flutter_template</string>
+    ```
+#### Update App Icons and Splash Screen
+
+1. Replace the icon files in `assets/icons/`.
+2. Configure the splash screen in `android/app/src/main/res` and `ios/Runner/Assets.xcassets/`.
+
+
+### Usage
+
+- **Routing**: Define your routes in `src/app.dart`.
+- **State Management**: Use the Provider package to manage app state.
+- **Styling**: Customized theme
+
+### Acknowledgments
+- Flutter Documentation: [Flutter.dev](https://flutter.dev/docs)
+- Dart Documentation: [dart.dev](https://dart.dev/guides)
+- [Provider Package](https://pub.dev/packages/provider)
+- [Mentoring](https://fernando-herrera.com/)
